@@ -44,5 +44,13 @@ public class EtcTest {
 		System.out.println(clean);
 		Assert.assertTrue(clean.equals("<b>click me!</b>"));
 	}
+	
+	@Test
+	public void test811() {
+		String dirty = "<form>폼안에 있는 내용은 어떻게 되나요?</form>";
+		String clean = XssFilter.getInstance().doFilter(dirty);
+		System.out.println(clean);
+		Assert.assertTrue(clean.equals("폼안에 있는 내용은 어떻게 되나요?"));
+	}
 
 }
