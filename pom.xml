@@ -6,6 +6,40 @@
 	<groupId>allbegray</groupId>
 	<artifactId>jsoup-xssfilter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<contributors>
+		<contributor>
+			<name>lee yong hong</name>
+			<email>allbegray@gmail.com</email>
+		</contributor>
+	</contributors>
+
+	<scm>
+		<url>https://github.com/allbegray/jsoup.xssfilter</url>
+		<connection>scm:git:ssh://github.com/allbegray/jsoup.xssfilter.git</connection>
+		<developerConnection>scm:git:git+ssh://git@github.com/allbegray/jsoup.xssfilter.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	
+	<issueManagement>
+		<system>GitHub Issue Management</system>
+		<url>https://github.com/allbegray/jsoup.xssfilter/issues</url>
+	</issueManagement>
+
+	<distributionManagement>
+		<site>
+			<id>github</id>
+			<url>gitsite:git@github.com/allbegray/jsoup.xssfilter.git</url>
+		</site>
+		<repository>
+			<id>repo</id>
+			<url>https://github.com/allbegray/jsoup.xssfilter/raw/master/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot-repo</id>
+			<url>https://github.com/allbegray/jsoup.xssfilter/raw/master/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,17 +63,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<distributionManagement>
-		<repository>
-			<id>repo</id>
-			<url>https://github.com/allbegray/jsoup.xssfilter/raw/master/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshot-repo</id>
-			<url>https://github.com/allbegray/jsoup.xssfilter/raw/master/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<build>
 		<plugins>
