@@ -28,7 +28,7 @@ public class MarkupParser {
 		}
 
 		for (Tag tag : whitelistRule.getTags()) {
-			if ("true".equalsIgnoreCase(tag.getDisabled())) {
+			if (tag.isDisabled()) {
 				continue;
 			}
 

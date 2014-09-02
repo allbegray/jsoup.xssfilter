@@ -33,6 +33,10 @@ public class Tag {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public boolean isDisabled() {
+		return "true".equalsIgnoreCase(disabled);
+	}
 
 	public String getDisabled() {
 		return disabled;
