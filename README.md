@@ -17,7 +17,7 @@ maven clean package
 String dirty = "<SCRIPT>x=/XSS/  alert(x.source)</SCRIPT>";
 String clean = XssFilter.getInstance().doFilter(dirty);
 
-String dirty = "<SCRIPT>x=/XSS/  alert(x.source)</SCRIPT>";
+String dirty = "<b onmouseover=alert('Wufff!')>click me!</b>";
 String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 ```
 
