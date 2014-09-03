@@ -14,7 +14,7 @@ maven clean package
 # Usage
 
 ```
-String dirty = "<SCRIPT>x=/XSS/  alert(x.source)</SCRIPT>";
+String dirty = "<script>alert('attack!!');</script>";
 String clean = XssFilter.getInstance().doFilter(dirty);
 
 String dirty = "<b onmouseover=alert('Wufff!')>click me!</b>";
