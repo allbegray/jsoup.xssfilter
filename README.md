@@ -15,14 +15,14 @@ maven clean package
 
 ### default configuration
 
-```
+```java
 String dirty = "<script>alert('attack!!');</script>";
 String clean = XssFilter.getInstance().doFilter(dirty);
 ```
 
 ### custom configuration
 
-```
+```java
 String dirty = "<b onmouseover=alert('Wufff!')>click me!</b>";
 String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 ```
@@ -31,7 +31,7 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 
 ### default
 
-```
+```xml
 <whitelistRule>
 	<attributeGroups>
 		<attrGroup name="Core">
