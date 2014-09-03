@@ -16,7 +16,9 @@ maven clean package
 ```
 String dirty = "<script>alert('attack!!');</script>";
 String clean = XssFilter.getInstance().doFilter(dirty);
+```
 
+```
 String dirty = "<b onmouseover=alert('Wufff!')>click me!</b>";
 String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 ```
