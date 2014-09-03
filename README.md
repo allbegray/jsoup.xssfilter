@@ -620,7 +620,7 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 		<tag name="meta" disabled="true">
 			<attr name="I18n" />
 			<attr name="content" />
-			<attr name="http-equiv" />
+			<attr name="http-equiv" enforced="nofollow" />
 			<attr name="name" />
 			<attr name="scheme" />
 		</tag>
