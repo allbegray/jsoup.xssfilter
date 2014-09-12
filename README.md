@@ -76,7 +76,6 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="hreflang" />
 			<attr name="rel" />
 			<attr name="rev" />
-			<attr name="accesskey" />
 			<attr name="shape" />
 			<attr name="coords" />
 			<attr name="tabindex" />
@@ -94,17 +93,22 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="Attrs" />
 			<attr name="shape" />
 			<attr name="coords" />
-			<attr name="href" />
+			<attr name="href">
+				<protocol>http</protocol>
+				<protocol>https</protocol>
+			</attr>
 			<attr name="nohref" />
 			<attr name="alt" />
 			<attr name="tabindex" />
-			<attr name="accesskey" />
 		</tag>
 		<tag name="b">
 			<attr name="Attrs" />
 		</tag>
 		<tag name="base">
-			<attr name="href" />
+			<attr name="href">
+				<protocol>http</protocol>
+				<protocol>https</protocol>
+			</attr>
 			<attr name="target" />
 		</tag>
 		<tag name="basefont">
@@ -115,6 +119,7 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 		</tag>
 		<tag name="bdo">
 			<attr name="Attrs" />
+			<attr name="dir" />
 		</tag>
 		<tag name="big">
 			<attr name="Attrs" />
@@ -137,7 +142,6 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="type" />
 			<attr name="disabled" />
 			<attr name="tabindex" />
-			<attr name="accesskey" />
 		</tag>
 		<tag name="caption">
 			<attr name="Attrs" />
@@ -213,21 +217,27 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 		</tag>
 		<tag name="h1">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="h2">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="h3">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="h4">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="h5">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="h6">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="hr">
 			<attr name="Attrs" />
@@ -268,7 +278,6 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="usemap" />
 			<attr name="ismap" />
 			<attr name="tabindex" />
-			<attr name="accesskey" />
 			<attr name="accept" />
 		</tag>
 		<tag name="ins">
@@ -288,12 +297,10 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 		</tag>
 		<tag name="label">
 			<attr name="Attrs" />
-			<attr name="accesskey" />
 			<attr name="for" />
 		</tag>
 		<tag name="legend">
 			<attr name="Attrs" />
-			<attr name="accesskey" />
 			<attr name="align" />
 		</tag>
 		<tag name="li">
@@ -302,14 +309,15 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="value" />
 			<attr name="compact" />
 		</tag>
-		
+		<tag name="main">
+			<attr name="Attrs" />
+		</tag>
 		<tag name="map">
 			<attr name="Attrs" />
 			<attr name="name" />
 		</tag>
 		<tag name="marquee">
 			<attr name="Attrs" />
-			<attr name="accesskey" />
 			<attr name="disabled" />
 			<attr name="tabindex" />
 			<attr name="title" />
@@ -328,7 +336,6 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="compact" />
 		</tag>
 		<tag name="nobr">
-			<attr name="accesskey" />
 			<attr name="disabled" />
 			<attr name="tabindex" />
 			<attr name="title" />
@@ -336,6 +343,7 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 		<tag name="ol">
 			<attr name="Attrs" />
 			<attr name="type" />
+			<attr name="reversed" />
 			<attr name="start" />
 			<attr name="compact" />
 		</tag>
@@ -353,6 +361,7 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 		</tag>
 		<tag name="p">
 			<attr name="Attrs" />
+			<attr name="align" />
 		</tag>
 		<tag name="param">
 			<attr name="id" />
@@ -450,7 +459,6 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="disabled" />
 			<attr name="readonly" />
 			<attr name="tabindex" />
-			<attr name="accesskey" />
 		</tag>
 		<tag name="tfoot">
 			<attr name="Attrs" />
@@ -473,9 +481,6 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			<attr name="Attrs" />
 			<attr name="Cellhalign" />
 			<attr name="Cellvalign" />
-		</tag>
-		<tag name="title">
-			<attr name="I18n" />
 		</tag>
 		<tag name="tr">
 			<attr name="Attrs" />
@@ -626,6 +631,9 @@ String clean = XssFilter.getInstance("other-config.xml").doFilter(dirty);
 			</attr>
 		</tag>
 		<!-- dangerous -->
+		<tag name="title" disabled="true">
+			<attr name="I18n" />
+		</tag>
 		<tag name="applet" disabled="true">
 			<attr name="Attrs" />
 			<attr name="codebase" />
