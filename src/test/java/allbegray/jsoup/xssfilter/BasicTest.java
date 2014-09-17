@@ -1,5 +1,7 @@
 package allbegray.jsoup.xssfilter;
 
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +13,13 @@ public class BasicTest {
 	@Before
 	public void setup() {
 		xssFilter = XssFilter.getInstance();
+	}
+	
+	@Test
+	public void oriTest() {
+		String dirty = "<b>이것은 볼드체</b>1<br/>2<br>3<br > <br />4띄어쓰기";
+		String clean = Jsoup.clean(dirty, Whitelist.none());
+		Assert.assertTrue(clean.equals("이것은 볼드체123 4띄어쓰기"));
 	}
 
 	@Test
@@ -45,7 +54,6 @@ public class BasicTest {
 	public void onmouseoverTest() {
 		String dirty = "<b onmouseover=alert('Wufff!')>click me!</b>";
 		String clean = XssFilter.getInstance().doFilter(dirty);
-		System.out.println(clean);
 		Assert.assertTrue(clean.equals("<b>click me!</b>"));
 	}
 
